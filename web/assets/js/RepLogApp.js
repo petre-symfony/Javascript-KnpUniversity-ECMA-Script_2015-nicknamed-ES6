@@ -50,16 +50,15 @@
 
       var $link = $(e.currentTarget);
 
-      var self = this;
       swal({
         title: 'Delete this log?',
         text: 'What? Did you not actually lift this?',
         showCancelButton: true,
         showLoaderOnConfirm: true,
-        preConfirm: function() {
-          return self._deleteRepLog($link);
+        preConfirm: () => {
+          return this._deleteRepLog($link);
         }
-      }).catch(function(arg) {
+      }).catch((arg) => {
         // canceling is cool!
       });
     },
