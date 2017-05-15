@@ -72,15 +72,14 @@
 
       var deleteUrl = $link.data('url');
       var $row = $link.closest('tr');
-      var self = this;
 
       return $.ajax({
         url: deleteUrl,
         method: 'DELETE'
-      }).then(function() {
-        $row.fadeOut('normal', function () {
-          $(this).remove();
-          self.updateTotalWeightLifted();
+      }).then(() => {
+        $row.fadeOut('normal', () => {
+          $row.remove();
+          this.updateTotalWeightLifted();
         });
       })
     },
