@@ -41,7 +41,7 @@
 
     updateTotalWeightLifted() {
       this.$wrapper.find('.js-total-weight').html(
-        this.helper.getTotalWeightString(500)
+        this.helper.getTotalWeightString()
       );
     },
 
@@ -185,7 +185,7 @@
       return totalWeight;
     },
     
-    getTotalWeightString(maxWeight) {
+    getTotalWeightString(maxWeight=500) {
       let weight = this.calculateTotalWeight();
       
       if (weight > maxWeight) {
