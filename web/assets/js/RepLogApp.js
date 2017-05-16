@@ -24,12 +24,14 @@
         this.handleNewFormSubmit.bind(this)
       );  
     }
+    
+    _selectors: {
+      newRepForm: '.js-new-rep-log-form'
+    }
   }
   
   $.extend(window.RepLogApp.prototype, {
-    _selectors: {
-      newRepForm: '.js-new-rep-log-form'
-    },
+    
 
     loadRepLogs() {
       $.ajax({
