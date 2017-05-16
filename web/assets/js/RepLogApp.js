@@ -118,7 +118,7 @@
             resolve(data);
           });
         }).catch((jqXHR) => {
-          let errorData = JSON.parse(jqXHR.responseText);
+          const errorData = JSON.parse(jqXHR.responseText);
 
           reject(errorData);
         });
@@ -127,17 +127,17 @@
 
     _mapErrorsToForm: function(errorData) {
       this._removeFormErrors();
-      let $form = this.$wrapper.find(this._selectors.newRepForm);
+      const $form = this.$wrapper.find(this._selectors.newRepForm);
 
       $form.find(':input').each((index, element) => {
-        let fieldName = $(element).attr('name');
-        var $wrapper = $(element).closest('.form-group');
+        const fieldName = $(element).attr('name');
+        const $wrapper = $(element).closest('.form-group');
         if (!errorData[fieldName]) {
           // no error!
           return;
         }
 
-        let $error = $('<span class="js-field-error help-block"></span>');
+        const $error = $('<span class="js-field-error help-block"></span>');
         $error.html(errorData[fieldName]);
         $wrapper.append($error);
         $wrapper.addClass('has-error');
@@ -145,7 +145,7 @@
     },
 
     _removeFormErrors: function() {
-      var $form = this.$wrapper.find(this._selectors.newRepForm);
+      const $form = this.$wrapper.find(this._selectors.newRepForm);
       $form.find('.js-field-error').remove();
       $form.find('.form-group').removeClass('has-error');
     },
@@ -153,15 +153,15 @@
     _clearForm: function() {
       this._removeFormErrors();
 
-      var $form = this.$wrapper.find(this._selectors.newRepForm);
+      const $form = this.$wrapper.find(this._selectors.newRepForm);
       $form[0].reset();
     },
 
     _addRow: function(repLog) {
-      var tplText = $('#js-rep-log-row-template').html();
-      var tpl = _.template(tplText);
+      const tplText = $('#js-rep-log-row-template').html();
+      const tpl = _.template(tplText);
 
-      var html = tpl(repLog);
+      const html = tpl(repLog);
       this.$wrapper.find('tbody').append($.parseHTML(html));
 
       this.updateTotalWeightLifted();
