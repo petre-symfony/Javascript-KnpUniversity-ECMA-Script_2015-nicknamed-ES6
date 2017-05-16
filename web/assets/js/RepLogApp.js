@@ -48,7 +48,7 @@
     handleRepLogDelete: function (e) {
       e.preventDefault();
 
-      let $link = $(e.currentTarget);
+      const $link = $(e.currentTarget);
 
       swal({
         title: 'Delete this log?',
@@ -68,8 +68,8 @@
         .addClass('fa-spinner')
         .addClass('fa-spin');
 
-      let deleteUrl = $link.data('url');
-      let $row = $link.closest('tr');
+      const deleteUrl = $link.data('url');
+      const $row = $link.closest('tr');
 
       return $.ajax({
         url: deleteUrl,
@@ -89,8 +89,8 @@
     handleNewFormSubmit: function(e) {
       e.preventDefault();
 
-      let $form = $(e.currentTarget);
-      let formData = {};
+      const $form = $(e.currentTarget);
+      const formData = {};
       $.each($form.serializeArray(), (key, fieldData) => {
         formData[fieldData.name] = fieldData.value
       });
