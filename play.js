@@ -1,18 +1,16 @@
 'use strict';
 
-const aGreatNumber = 10;
-const aGreatObject = { withGreatKeys: true };
-
-aGreatObject.withGreatKeys = false;
-
-if (true){
-  //aGreatNumber = 42;
+class AGreatClass {
+  constructor(greatNumber){
+    this.greatNumber = greatNumber;
+  }
+  
+  returnGreatThings(){
+    return this.greatNumber;
+  }
 }
 
-setTimeout(() => {
-  console.log(aGreatNumber);
-  console.log(aGreatObject);
-}, 1000);
-
-console.log('waiting...');
-
+const aGreatObject = new AGreatClass(42);
+console.log(
+   aGreatObject. returnGreatThings()        
+);
