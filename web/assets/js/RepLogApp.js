@@ -168,13 +168,18 @@
       this.updateTotalWeightLifted();
     }
   });
+  
 
   /**
    * A "private" object
    */
-  var Helper = function ($wrapper) {
-    this.$wrapper = $wrapper;
-  };
+  class Helper {
+    constructor($wrapper) {
+      this.$wrapper = $wrapper;
+    };  
+  }
+  
+  
   $.extend(Helper.prototype, {
     calculateTotalWeight() {
       let totalWeight = 0;
