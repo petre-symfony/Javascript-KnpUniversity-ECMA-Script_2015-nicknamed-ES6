@@ -1,9 +1,10 @@
-var aGreatNumber = 10;
+'use strict';
+
+let aGreatNumber = 10;
 
 if (true){
-  (() => {
-    var aGreatNumber = 42;
-  })()
+  let aGreatNumber = 42;
+ 
 }
 
 setTimeout(() => {
