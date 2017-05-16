@@ -3,7 +3,7 @@
 const aGreatNumber = 10;
 
 if (true){
-  aGreatNumber = 42;
+  //aGreatNumber = 42;
 }
 
 setTimeout(() => {
