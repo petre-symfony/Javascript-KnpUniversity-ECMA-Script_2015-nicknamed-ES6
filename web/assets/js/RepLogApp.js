@@ -29,7 +29,7 @@
       newRepForm: '.js-new-rep-log-form'
     },
 
-    loadRepLogs: function() {
+    loadRepLogs() {
       $.ajax({
         url: Routing.generate('rep_log_list'),
       }).then(data => {
