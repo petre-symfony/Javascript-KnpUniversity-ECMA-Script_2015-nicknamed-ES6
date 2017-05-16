@@ -176,11 +176,8 @@
   class Helper {
     constructor($wrapper) {
       this.$wrapper = $wrapper;
-    };  
-  }
-  
-  
-  $.extend(Helper.prototype, {
+    }
+    
     calculateTotalWeight() {
       let totalWeight = 0;
       this.$wrapper.find('tbody tr').each((index, element) => {
@@ -188,7 +185,7 @@
       });
 
       return totalWeight;
-    },
+    }
     
     getTotalWeightString(maxWeight=500) {
       let weight = this.calculateTotalWeight();
@@ -198,6 +195,6 @@
       }
       
       return weight + ' lbs';
-    }
-  });
+    }  
+  }
 })(window, jQuery, Routing, swal);
