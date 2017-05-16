@@ -11,7 +11,8 @@ class AGreatClass {
 }
 
 class AnotherGreatClass extends AGreatClass{
-  constructor(greatWord) {
+  constructor(greatNumber, greatWord) {
+    super(greatNumber);
     this.greatWord = greatWord;
   }
   
@@ -22,7 +23,7 @@ class AnotherGreatClass extends AGreatClass{
   }
 }
 
-const aGreatObject = new AnotherGreatClass(42);
+const aGreatObject = new AnotherGreatClass(42, 'adventure');
 console.log(
    aGreatObject. returnGreatThings()        
 );
