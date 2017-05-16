@@ -199,4 +199,6 @@
       return weight + ' lbs';
     }  
   }
+  
+  window.RepLogApp = RepLogApp;
 })(window, jQuery, Routing, swal);
