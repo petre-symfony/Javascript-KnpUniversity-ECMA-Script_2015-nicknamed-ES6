@@ -181,7 +181,6 @@
         totalWeight += $(element).data('weight');
       });
 
-      console.log(totalWeight);
       return totalWeight;
     }
   });
