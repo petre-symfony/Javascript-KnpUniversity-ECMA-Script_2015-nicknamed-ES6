@@ -1,5 +1,5 @@
 'use strict';
-
+console.log(bar);
 let aGreatNumber = 10;
 
 if (true){
