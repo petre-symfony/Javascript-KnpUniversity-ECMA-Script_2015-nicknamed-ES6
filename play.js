@@ -12,7 +12,9 @@ class AGreatClass {
 
 class AnotherGreatClass extends AGreatClass{
   returnGreatThings(){
-    return 'adventure';
+    let greatNumber = super.returnGreatThings();
+    
+    return [greatNumber, 'adventure'];
   }
 }
 
