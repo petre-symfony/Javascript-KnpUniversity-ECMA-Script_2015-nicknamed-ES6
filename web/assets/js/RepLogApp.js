@@ -224,5 +224,15 @@
       </td>
     </tr>
   `;
+  
+  new RepLogApp($('body'));
+  new RepLogApp($('body'));
+  new RepLogApp($('body'));
+  new RepLogApp($('body'));
+  
+  setTimeout(() => {
+    console.log(HelperInstance)
+  }, 5000);
+  
   window.RepLogApp = RepLogApp;
 })(window, jQuery, Routing, swal);
