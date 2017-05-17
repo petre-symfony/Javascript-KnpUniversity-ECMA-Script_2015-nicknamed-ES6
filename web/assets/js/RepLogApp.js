@@ -6,8 +6,9 @@
   class RepLogApp {
     constructor($wrapper) {
       this.$wrapper = $wrapper;
-      HelperInstance.set(this, new Helper(this.$wrapper));
-
+      HelperInstance.set(this, new Helper($wrapper));
+      return;
+      
       this.loadRepLogs();
 
       this.$wrapper.on(
