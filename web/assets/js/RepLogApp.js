@@ -81,7 +81,15 @@
         method: 'DELETE'
       }).then(() => {
         $row.fadeOut('normal', () => {
+          //we need to remove the repLog from this.repLogs
+          //the "key" is the index to this repLog on this.repLogs
+          this.repLogs.splice(
+            $row.data('key'),
+            1
+          );
+  
           $row.remove();
+          
           this.updateTotalWeightLifted();
         });
       })
