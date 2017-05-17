@@ -1,6 +1,8 @@
 'use strict';
 
-const favoriteFood = 'gelato';
-const iLoveFood = `The year is ${(new Date().getFullYear())} and my favorite food is ${favoriteFood}`;
+let foods = {};
+foods.italian = 'gelato';
+foods.mexican = 'torta';
+foods.canadian = 'poutine';
 
-console.log(iLoveFood);
+console.log(foods.italian);
