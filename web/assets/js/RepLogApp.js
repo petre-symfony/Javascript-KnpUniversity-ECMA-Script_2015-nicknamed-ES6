@@ -7,7 +7,7 @@
     constructor($wrapper) {
       this.$wrapper = $wrapper;
       this.repLogs = [];
-      HelperInstance.set(this, new Helper($wrapper));
+      HelperInstance.set(this, new Helper(this.repLogs));
       
       this.loadRepLogs();
 
@@ -41,7 +41,6 @@
         for (let repLog of data.items){
            this._addRow(repLog); 
         }
-        console.log(this.repLogs, this.repLogs.includes(data.items[0]));
       })
     }
 
@@ -181,13 +180,13 @@
    * A "private" object
    */
   class Helper {
-    constructor($wrapper) {
-      this.$wrapper = $wrapper;
+    constructor(repLogs) {
+      this.repLogs = repLogs;
     }
     
     calculateTotalWeight() {
       return Helper._calculateWeight(
-        this.$wrapper.find('tbody tr')        
+        this.repLogs        
       );
     }
     
@@ -201,10 +200,10 @@
       return weight + ' lbs';
     }
     
-    static _calculateWeight($elements){
+    static _calculateWeight(repLogs){
       let totalWeight = 0;
-      for (let element of $elements) {
-        totalWeight += $(element).data('weight');
+      for (let repLog of repLogs) {
+        totalWeight += repLog.totalWeightLifted;
       };
 
       return totalWeight; 
