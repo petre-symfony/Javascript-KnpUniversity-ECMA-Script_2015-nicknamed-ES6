@@ -1,6 +1,6 @@
 'use strict';
 
-let foods = new Map();
+let foods = new WeakMap();
 foods.set('italian', 'gelato');
 foods.set('mexican', 'torta');
 foods.set('canadian', 'poutine');
