@@ -1,8 +1,8 @@
 'use strict';
 
-let foods = {};
-foods.italian = 'gelato';
-foods.mexican = 'torta';
-foods.canadian = 'poutine';
+let foods = new Map();
+foods.set('italian', 'gelato');
+foods.set('mexican', 'torta');
+foods.set('canadian', 'poutine');
 
-console.log(foods.italian);
+console.log(foods.get('italian'));
