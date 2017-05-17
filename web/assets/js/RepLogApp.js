@@ -1,13 +1,12 @@
 'use strict';
 
 (function(window, $, Routing, swal) {
-  let HelperInstance = new WeakMap();
+  let HelperInstance = new Map();
   
   class RepLogApp {
     constructor($wrapper) {
       this.$wrapper = $wrapper;
       HelperInstance.set(this, new Helper($wrapper));
-      return;
       
       this.loadRepLogs();
 
@@ -226,14 +225,6 @@
     </tr>
   `;
   
-  new RepLogApp($('body'));
-  new RepLogApp($('body'));
-  new RepLogApp($('body'));
-  new RepLogApp($('body'));
-  
-  setTimeout(() => {
-    console.log(HelperInstance)
-  }, 5000);
   
   window.RepLogApp = RepLogApp;
 })(window, jQuery, Routing, swal);
