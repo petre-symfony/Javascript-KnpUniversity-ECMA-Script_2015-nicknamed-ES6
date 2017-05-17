@@ -6,6 +6,7 @@
   class RepLogApp {
     constructor($wrapper) {
       this.$wrapper = $wrapper;
+      this.repLogs = new Array();
       HelperInstance.set(this, new Helper($wrapper));
       
       this.loadRepLogs();
@@ -40,6 +41,7 @@
         for (let repLog of data.items){
            this._addRow(repLog); 
         }
+        console.log(this.repLogs, this.repLogs.includes(data.items[0]));
       })
     }
 
@@ -163,9 +165,10 @@
     }
 
     _addRow(repLog) {
+      this.repLogs.push(repLog);
       //let {id, itemLabel, reps, totallyMadeUpKey = 'whatever!'} = repLog;
       //console.log(id, itemLabel, reps, totallyMadeUpKey)
-
+      
       const html = rowTemplate(repLog);
       this.$wrapper.find('tbody').append($.parseHTML(html));
 
